@@ -15,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 
+@AndroidEntryPoint
 class WalkingCatsFragment : Fragment() {
 
     private val tag="cats"
@@ -40,9 +41,12 @@ class WalkingCatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d(tag,"walkingCatsFragment")
-
+        observeData()
+        viewModel.getWalkingCats()
 
     }
 
-
+    fun observeData() {
+        viewModel.catList.observe(viewLifecycleOwner){ it.forEach {item-> Log.d(tag,"cat = ${item.id}, ${item.url}") } }
+    }
 }
