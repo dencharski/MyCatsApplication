@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MyCatsApplication</string>
+    <string name="local_home_cats">Home Cats</string>
+    <string name="walking_cats">Walking Cats</string>
+    <string name="current_cat">Current Cat</string>
 </resources>

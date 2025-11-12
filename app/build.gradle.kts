@@ -1,6 +1,14 @@
+import org.gradle.kotlin.dsl.implementation
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("plugin.serialization") version "2.0.21"
+
+    alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.android.kotlin)
+    alias(libs.plugins.kotlin.kapt)
+
 }
 
 android {
@@ -25,6 +33,7 @@ android {
                 "proguard-rules.pro"
             )
         }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -33,22 +42,36 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
+
 }
 
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.collection.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
     //hilt
+    implementation(libs.hilt.android)
+    annotationProcessor(libs.hilt.compiler)
+
+
     implementation (libs.hilt.android)
-    annotationProcessor (libs.hilt.compiler)
+    kapt (libs.hilt.android.compiler)
+    kapt (libs.androidx.hilt.hilt.compiler)
+    implementation (libs.androidx.activity.ktx)
     //glide
     implementation(libs.glide)
     //retrofit
@@ -56,14 +79,20 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.gson)
     implementation(libs.logging.interceptor)
+    implementation(libs.retrofit2.kotlin.coroutines.adapter)
     //coroutines
     implementation(libs.kotlinx.coroutines.android)
     //fragments
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.navigation.dynamic.features.fragment)
+
+    // Jetpack Compose integration
+    implementation(libs.androidx.navigation.compose)
+
     //navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
-    implementation(libs.androidx.fragment.ktx)
+
 
 }
