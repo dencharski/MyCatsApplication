@@ -1,7 +1,8 @@
 package com.example.mycatsapplication.walking_cats.domain.api
 
-import com.example.mycatsapplication.walking_cats.domain.models.CatListDataModel
+import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+
 
 interface WalkingCatsInteractor {
-    suspend fun getWalkingCats(): CatListDataModel
+    suspend fun getWalkingCats(): List<CatDataModel>
 }
