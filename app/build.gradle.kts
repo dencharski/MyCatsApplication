@@ -44,8 +44,18 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
+    //android.buildFeatures.
 
+    buildTypes.forEach { buildType ->
+
+        buildType.buildConfigField(
+            "String",
+            "CAT_API_KEY",
+            project.property("CAT_API_KEY") as String
+        )
+    }
 }
 
 dependencies {

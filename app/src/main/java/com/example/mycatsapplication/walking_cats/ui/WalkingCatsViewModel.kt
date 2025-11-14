@@ -24,7 +24,7 @@ class WalkingCatsViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val result = walkingCatsInteractor.getWalkingCats()
             withContext(Dispatchers.Main) {
-                setCatList(result.catList)
+                setCatList(result)
             }
         }
     }
