@@ -58,12 +58,4 @@ class LocalCatsViewModel @Inject constructor(private val localCatInteractor: Loc
         }
     }
 
-    fun getCatsIds() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val result = localCatInteractor.getCatsIds()
-            withContext(Dispatchers.Main) {
-                _catsIds.postValue(result)
-            }
-        }
-    }
 }
