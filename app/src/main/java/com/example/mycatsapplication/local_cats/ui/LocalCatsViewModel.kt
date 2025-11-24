@@ -22,32 +22,40 @@ class LocalCatsViewModel @Inject constructor(private val localCatInteractor: Loc
     val localCats: LiveData<List<CatDataModel>> get() = _localCats
 
     fun getAllLocalCats() {
-        viewModelScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO) {
             val result = localCatInteractor.getAllLocalCats()
-            withContext(Dispatchers.Main){
+            withContext(Dispatchers.Main) {
+                val ids = mutableListOf<String>()
+                result.forEach { ids.add(it.id) }
+                _catsIds.postValue(ids)
                 _localCats.postValue(result)
+
             }
         }
     }
 
     fun addCat(cat: CatDataModel) {
         viewModelScope.launch(Dispatchers.IO) {
-            localCatInteractor.addCat(cat)
+            val result = localCatInteractor.addCat(cat)
+            withContext(Dispatchers.Main) {
+                val ids = mutableListOf<String>()
+                result.forEach { ids.add(it.id) }
+                _catsIds.postValue(ids)
+                _localCats.postValue(result)
+            }
         }
     }
 
     fun deleteCat(cat: CatDataModel) {
         viewModelScope.launch(Dispatchers.IO) {
-            localCatInteractor.deleteCat(cat)
-        }
-    }
-
-    fun getCatsIds() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val result = localCatInteractor.getCatsIds()
-            withContext(Dispatchers.Main){
-                _catsIds.postValue(result)
+            val result = localCatInteractor.deleteCat(cat)
+            withContext(Dispatchers.Main) {
+                val ids = mutableListOf<String>()
+                result.forEach { ids.add(it.id) }
+                _catsIds.postValue(ids)
+                _localCats.postValue(result)
             }
         }
     }
+
 }

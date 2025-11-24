@@ -10,15 +10,12 @@ class LocalCatInteractorImpl @Inject constructor(private val localCatRepository:
         return localCatRepository.getAllLocalCats()
     }
 
-    override suspend fun addCat(cat: CatDataModel) {
-        localCatRepository.addCat(cat)
+    override suspend fun addCat(cat: CatDataModel): List<CatDataModel> {
+        return localCatRepository.addCat(cat)
     }
 
-    override suspend fun deleteCat(cat: CatDataModel) {
-        localCatRepository.deleteCat(cat)
+    override suspend fun deleteCat(cat: CatDataModel): List<CatDataModel> {
+       return localCatRepository.deleteCat(cat)
     }
 
-    override suspend fun getCatsIds(): List<String> {
-        return localCatRepository.getCatsIds()
-    }
 }
