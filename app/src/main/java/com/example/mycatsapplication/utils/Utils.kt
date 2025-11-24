@@ -1,7 +1,14 @@
 package com.example.mycatsapplication.utils
 
 class Utils() {
-    private val theCatApiKey: String =
-        "live_RZ5k72GGJLok6cYHXwLCI6Fd00OijfcoFIcdRo1j770UT41g5aE59bkE4eu1HcJR"
+
+    companion object {
+        fun getCatSharedPreferences(): String {
+            return THE_CAT_SHARED_PREFERENCES
+        }
+
+        private const val THE_CAT_SHARED_PREFERENCES: String =
+            "cat_shared_preferences"
+    }
 
 }
