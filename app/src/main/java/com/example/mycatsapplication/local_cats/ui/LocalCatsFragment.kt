@@ -6,19 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import com.example.mycatsapplication.MainViewModel
 import com.example.mycatsapplication.databinding.FragmentLocalCatsBinding
+import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+import com.example.mycatsapplication.walking_cats.ui.WalkingCatAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class LocalCatsFragment : Fragment() {
+class LocalCatsFragment : Fragment(),
+    WalkingCatAdapter.ItemClick,
+    WalkingCatAdapter.AddInDbClick,
+    WalkingCatAdapter.DelInDbClick {
 
-    companion object {
-        fun newInstance() = LocalCatsFragment()
-    }
 
     private val tag = "cats"
     private var _binding: FragmentLocalCatsBinding? = null
@@ -28,8 +28,7 @@ class LocalCatsFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val localCatsViewModel: LocalCatsViewModel by viewModels()
-
-    private val sharedViewModel: MainViewModel by activityViewModels()
+    private var localCatAdapter: WalkingCatAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,22 +42,54 @@ class LocalCatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        observeValues()
+        prepareView()
+        observeData()
+        localCatsViewModel.getAllLocalCats()
     }
 
-    private fun observeValues() {
-        localCatsViewModel.catsIds.observe(viewLifecycleOwner) {
-            it.forEach { item -> Log.d(tag, "id=$item ") }
-
+    private fun observeData() {
+        localCatsViewModel.listOfLocalCatsIds.observe(viewLifecycleOwner) {
+            it.forEach { item -> Log.d(tag, "local fr id=$item ") }
+            localCatAdapter?.setListOfCatsIds(it as ArrayList)
         }
-        localCatsViewModel.localCats.observe(viewLifecycleOwner) {
-            it.forEach { item -> Log.d(tag, "localCat=${item} ") }
-
+        localCatsViewModel.listOfLocalCats.observe(viewLifecycleOwner) {
+            it.forEach { item -> Log.d(tag, "local fr localCat=${item} ") }
+            localCatAdapter?.setListOfCats(it as ArrayList)
         }
+    }
+
+    fun prepareView() {
+
+        localCatAdapter = WalkingCatAdapter()
+        localCatAdapter?.setDeleteButtonClickListener(this)
+        localCatAdapter?.setItemClickListener(this)
+        localCatAdapter?.setAddButtonClickListener(this)
+        binding.catsRecyclerView.adapter = localCatAdapter
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemClick(item: CatDataModel?) {
+        Log.d(tag, "loc on item click ${item?.id}")
+        if (item != null) {
+
+        }
+    }
+
+    override fun onAddInDbClick(item: CatDataModel?) {
+        Log.d(tag, "loc add in database ${item?.id}")
+        if (item != null) {
+            localCatsViewModel.addCat(item)
+        }
+    }
+
+    override fun onDeleteFromDbClick(item: CatDataModel?) {
+        Log.d(tag, "loc delete from database ${item?.id}")
+        if (item != null) {
+            localCatsViewModel.deleteCat(item)
+        }
     }
 }

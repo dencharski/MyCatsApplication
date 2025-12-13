@@ -18,7 +18,7 @@ class WalkingCatsRepositoryImpl @Inject constructor(
         try {
             val result = apiCatServices.getWalkingCats()
             Log.d(tag, "cats repository = " +
-                    "${result.message()}" +
+                    "${result.body()}" +
                     "")
             return catConverterImpl.convertCats(result.body()!!)
 

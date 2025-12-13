@@ -16,45 +16,45 @@ import javax.inject.Inject
 @HiltViewModel
 class LocalCatsViewModel @Inject constructor(private val localCatInteractor: LocalCatInteractor) :
     ViewModel() {
-    private val _catsIds = MutableLiveData<List<String>>()
-    val catsIds: LiveData<List<String>> get() = _catsIds
-    private val _localCats = MutableLiveData<List<CatDataModel>>()
-    val localCats: LiveData<List<CatDataModel>> get() = _localCats
+    private val _listOfLocalCatsIds = MutableLiveData<List<String>>()
+    val listOfLocalCatsIds: LiveData<List<String>> get() = _listOfLocalCatsIds
+    private val _listOfLocalCats = MutableLiveData<List<CatDataModel>>()
+    val listOfLocalCats: LiveData<List<CatDataModel>> get() = _listOfLocalCats
 
     fun getAllLocalCats() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.Main) {
             val result = localCatInteractor.getAllLocalCats()
-            withContext(Dispatchers.Main) {
+
                 val ids = mutableListOf<String>()
                 result.forEach { ids.add(it.id) }
-                _catsIds.postValue(ids)
-                _localCats.postValue(result)
+                _listOfLocalCatsIds.postValue(ids)
+                _listOfLocalCats.postValue(result)
 
-            }
+
         }
     }
 
     fun addCat(cat: CatDataModel) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.Main) {
             val result = localCatInteractor.addCat(cat)
-            withContext(Dispatchers.Main) {
+
                 val ids = mutableListOf<String>()
                 result.forEach { ids.add(it.id) }
-                _catsIds.postValue(ids)
-                _localCats.postValue(result)
-            }
+                _listOfLocalCatsIds.postValue(ids)
+                _listOfLocalCats.postValue(result)
+
         }
     }
 
     fun deleteCat(cat: CatDataModel) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.Main) {
             val result = localCatInteractor.deleteCat(cat)
-            withContext(Dispatchers.Main) {
+
                 val ids = mutableListOf<String>()
                 result.forEach { ids.add(it.id) }
-                _catsIds.postValue(ids)
-                _localCats.postValue(result)
-            }
+                _listOfLocalCatsIds.postValue(ids)
+                _listOfLocalCats.postValue(result)
+
         }
     }
 
