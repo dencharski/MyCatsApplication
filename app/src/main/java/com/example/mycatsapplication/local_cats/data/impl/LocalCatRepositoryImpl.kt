@@ -1,6 +1,7 @@
 package com.example.mycatsapplication.local_cats.data.impl
 
 import android.content.SharedPreferences
+import android.util.Log
 import com.example.mycatsapplication.local_cats.data.api.ConverterLocalCat
 import com.example.mycatsapplication.local_cats.data.api.LocalCatRepository
 import com.example.mycatsapplication.local_cats.data.models.LocalCatDataModel
@@ -22,10 +23,13 @@ class LocalCatRepositoryImpl @Inject constructor(
 
     override suspend fun getAllLocalCats(): List<CatDataModel> {
         addCatListAndCatListId()
-        return catList.map { converterLocalCat.convertFromLocal(it) }
+        val catlist=catList.map { converterLocalCat.convertFromLocal(it) }
+        catlist.forEach { it->Log.d(tag,"local repo allCats = ${it.id}") }
+        return catlist
     }
 
     override suspend fun addCat(catDataModel: CatDataModel): List<CatDataModel> {
+        Log.d(tag,"local repo addCat = ${catDataModel.id}")
         val arrayListOfLocalCatDataModel = arrayListOf<LocalCatDataModel>()
         val localCat = converterLocalCat.convertToLocal(catDataModel)
         if (!catListId.contains(localCat.id)) {

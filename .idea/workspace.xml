@@ -5,6 +5,21 @@
       <config />
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_android_black_24dp.xml">
+        <config>
+          <theme>@style/Theme.MyCatsApplication</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_archive_black_24dp.xml">
+        <config>
+          <theme>@style/Theme.MyCatsApplication</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_delete_black_24dp.xml">
+        <config>
+          <theme>@style/Theme.MyCatsApplication</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
         <config>
           <theme>@style/Theme.MyCatsApplication</theme>
@@ -25,6 +40,11 @@
           <theme>@style/Theme.MyCatsApplication</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_cat_view.xml">
+        <config>
+          <theme>@style/Theme.MyCatsApplication</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/cat_navigation_items.xml">
         <config>
           <theme>@style/Theme.MyCatsApplication</theme>
@@ -41,16 +61,33 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef657a1-b80a-488e-8fbf-9661180491e6" name="Changes" comment="-add SharedPreferences in LocalCatRepositoryImpl.kt">
+    <list default="true" id="bef657a1-b80a-488e-8fbf-9661180491e6" name="Changes" comment="- add WalkingCatAdapter.kt">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_android_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_archive_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete_black_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cat_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/api/LocalCatRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/api/LocalCatRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/impl/LocalCatRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/impl/LocalCatRepositoryImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/domain/api/LocalCatInteractor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/domain/api/LocalCatInteractor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/domain/impl/LocalCatInteractorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/domain/impl/LocalCatInteractorImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/ui/LocalCatsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/ui/LocalCatsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/ui/LocalCatsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/ui/LocalCatsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/impl/WalkingCatsRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/impl/WalkingCatsRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/domain/api/WalkingCatsInteractor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/domain/api/WalkingCatsInteractor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/domain/impl/WalkingCatsInteractorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/domain/impl/WalkingCatsInteractorImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_local_cats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_local_cats.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_walking_cats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_walking_cats.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +97,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\79097\.android\avd\Pixel_5_API_30.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=xwgyt89lyd6d49mv)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -97,10 +134,11 @@
         <option value="resourceFile" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="Kotlin JUnit5 Test Class" />
         <option value="Kotlin JUnit4 Test Class" />
         <option value="Kotlin Object" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -159,13 +197,17 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#4 on add__shared__preferences&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;add__localats__adapter&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/AndroidStudioProjects/MyCatsApplication/app/src/test/java/com/example/mycatsapplication/walking_cats/ui&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/AndroidStudioProjects/MyCatsApplication/app/src/main/res/drawable&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\AndroidStudioProjects\MyCatsApplication\app\src\main\res\drawable" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -442,7 +484,31 @@
       <option name="project" value="LOCAL" />
       <updated>1763571472050</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="- add WalkingCatAdapter.kt">
+      <option name="closed" value="true" />
+      <created>1764613502644</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1764613502644</updated>
+    </task>
+    <task id="LOCAL-00024" summary="- add WalkingCatAdapter.kt">
+      <option name="closed" value="true" />
+      <created>1764613512416</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1764613512416</updated>
+    </task>
+    <task id="LOCAL-00025" summary="- add WalkingCatAdapter.kt">
+      <option name="closed" value="true" />
+      <created>1764613526263</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1764613526263</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -460,7 +526,11 @@
     <MESSAGE value="-add hilt modules in walking cat di folder" />
     <MESSAGE value="Merge remote-tracking branch 'origin/dev' into dev" />
     <MESSAGE value="-add SharedPreferences in LocalCatRepositoryImpl.kt" />
-    <option name="LAST_COMMIT_MESSAGE" value="-add SharedPreferences in LocalCatRepositoryImpl.kt" />
+    <MESSAGE value="-some edit in LocalCat" />
+    <MESSAGE value="-add walkingCatAdapter" />
+    <MESSAGE value="Merge pull request #4 from dencharski/add_shared_preferences&#10;&#10;-add SharedPreferences in LocalCatRepositoryImpl.kt" />
+    <MESSAGE value="- add WalkingCatAdapter.kt" />
+    <option name="LAST_COMMIT_MESSAGE" value="- add WalkingCatAdapter.kt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -477,12 +547,12 @@
       <map>
         <entry key="com.example.mycatsapplication">
           <value>
-            <CheckInfo lastCheckTimestamp="1762967676796" />
+            <CheckInfo lastCheckTimestamp="1765645860196" />
           </value>
         </entry>
         <entry key="com.example.mycatsapplication.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1762967676796" />
+            <CheckInfo lastCheckTimestamp="1765645860198" />
           </value>
         </entry>
       </map>
