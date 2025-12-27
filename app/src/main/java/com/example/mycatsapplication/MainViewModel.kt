@@ -3,7 +3,7 @@ package com.example.mycatsapplication
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+import com.example.mycatsapplication.utils.models.CatDataModel
 
 class MainViewModel() : ViewModel() {
     private val _mutableCatsIds = MutableLiveData<List<String>>()

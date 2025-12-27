@@ -3,7 +3,7 @@ package com.example.mycatsapplication.walking_cats.domain.impl
 import com.example.mycatsapplication.local_cats.data.api.LocalCatRepository
 import com.example.mycatsapplication.walking_cats.data.api.WalkingCatsRepository
 import com.example.mycatsapplication.walking_cats.domain.api.WalkingCatsInteractor
-import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+import com.example.mycatsapplication.utils.models.CatDataModel
 import javax.inject.Inject
 
 class WalkingCatsInteractorImpl @Inject constructor(

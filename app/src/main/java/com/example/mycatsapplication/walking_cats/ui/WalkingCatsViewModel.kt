@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mycatsapplication.walking_cats.domain.api.WalkingCatsInteractor
-import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+import com.example.mycatsapplication.utils.models.CatDataModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,10 +19,10 @@ class WalkingCatsViewModel @Inject constructor(
     private val walkingCatsInteractor: WalkingCatsInteractor
 ) : ViewModel() {
     private val tag = "cats"
-    private val _mutableWalkingCatList = MutableLiveData<List<CatDataModel>>()
-    val walkingCatList: LiveData<List<CatDataModel>> get() = _mutableWalkingCatList
-    private val _mutableCatIdList = MutableLiveData<List<String>>()
-    val catIdList: LiveData<List<String>> get() = _mutableCatIdList
+    private val _walkingCatList = MutableLiveData<List<CatDataModel>>()
+    val walkingCatList: LiveData<List<CatDataModel>> get() = _walkingCatList
+    private val _catIdList = MutableLiveData<List<String>>()
+    val catIdList: LiveData<List<String>> get() = _catIdList
 
     init {
         getWalkingCats()
@@ -38,7 +38,7 @@ class WalkingCatsViewModel @Inject constructor(
     }
 
     fun setCatList(cats: List<CatDataModel>) {
-        _mutableWalkingCatList.postValue(cats)
+        _walkingCatList.postValue(cats)
     }
 
     fun getAllLocalCats() {
@@ -47,7 +47,7 @@ class WalkingCatsViewModel @Inject constructor(
             withContext(Dispatchers.Main) {
                 val ids = mutableListOf<String>()
                 result.forEach { ids.add(it.id) }
-                _mutableCatIdList.postValue(ids)
+                _catIdList.postValue(ids)
             }
         }
     }
@@ -61,7 +61,7 @@ class WalkingCatsViewModel @Inject constructor(
                 ids.add(it.id)
                 Log.d(tag, "cat = ${it.id}")
             }
-            _mutableCatIdList.postValue(ids)
+            _catIdList.postValue(ids)
 
         }
     }
@@ -76,7 +76,7 @@ class WalkingCatsViewModel @Inject constructor(
                     Log.d(tag, "cat = ${it.id}")
                 }
 
-                _mutableCatIdList.postValue(ids)
+                _catIdList.postValue(ids)
             }
         }
     }

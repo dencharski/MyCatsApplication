@@ -7,8 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.mycatsapplication.R
 import com.example.mycatsapplication.databinding.FragmentWalkingCatsBinding
-import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+import com.example.mycatsapplication.utils.Utils
+import com.example.mycatsapplication.utils.models.CatDataModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -44,7 +47,7 @@ class WalkingCatsFragment : Fragment(),
         walkingCatsViewModel.getAllLocalCats()
     }
 
-    fun observeData() {
+    private fun observeData() {
         walkingCatsViewModel.walkingCatList.observe(viewLifecycleOwner) {
             if (it != null) {
                 it.forEach { item ->
@@ -65,7 +68,7 @@ class WalkingCatsFragment : Fragment(),
         }
     }
 
-    fun prepareView() {
+    private fun prepareView() {
 
         walkingCatAdapter = WalkingCatAdapter()
         walkingCatAdapter?.setDeleteButtonClickListener(this)
@@ -97,6 +100,12 @@ class WalkingCatsFragment : Fragment(),
     override fun onItemClick(item: CatDataModel?) {
         Log.d(tag, "on item click ${item?.id}")
         if (item != null) {
+            val bundle = Bundle()
+            bundle.putParcelable(Utils.getCatAppKey(), item)
+            findNavController().navigate(
+                R.id.action_walkingCatsFragment_to_currentCatFragment,
+                bundle
+            )
 
         }
     }

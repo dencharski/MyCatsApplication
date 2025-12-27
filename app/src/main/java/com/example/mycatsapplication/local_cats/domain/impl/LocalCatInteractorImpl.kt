@@ -2,7 +2,7 @@ package com.example.mycatsapplication.local_cats.domain.impl
 
 import com.example.mycatsapplication.local_cats.data.api.LocalCatRepository
 import com.example.mycatsapplication.local_cats.domain.api.LocalCatInteractor
-import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+import com.example.mycatsapplication.utils.models.CatDataModel
 import javax.inject.Inject
 
 class LocalCatInteractorImpl @Inject constructor(private val localCatRepository: LocalCatRepository): LocalCatInteractor {

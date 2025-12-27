@@ -61,13 +61,25 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef657a1-b80a-488e-8fbf-9661180491e6" name="Changes" comment="- add WalkingCatAdapter.kt">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_android_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_archive_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_delete_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cat_view.xml" afterDir="false" />
+    <list default="true" id="bef657a1-b80a-488e-8fbf-9661180491e6" name="Changes" comment="- add WalkingCatAdapter in LocalCatsFragment.kt">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/data/api/CurrentCatConverter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/data/api/CurrentCatRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/data/dto_models/CurrentCatBreedDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/data/dto_models/CurrentCatCategoriesDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/data/dto_models/CurrentCatDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/data/impl/CurrentCatConverterImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/data/impl/CurrentCatRepositoryImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/di/InteractorModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/di/RepositoryModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/domain/api/CurrentCatInteractor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/domain/impl/CurrentCatInteractorImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/domain/models/CurrentCatBreedDataModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/domain/models/CurrentCatCategoriesDataModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/domain/models/CurrentCatDataModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/utils/models/CatDataModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
@@ -76,18 +88,38 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/MainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/ui/CurrentCatFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/ui/CurrentCatFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/ui/CurrentCatViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/current_cat/ui/CurrentCatViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/api/ConverterLocalCat.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/api/ConverterLocalCat.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/api/LocalCatRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/api/LocalCatRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/impl/ConverterLocalCatImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/impl/ConverterLocalCatImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/impl/LocalCatRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/data/impl/LocalCatRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/domain/api/LocalCatInteractor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/domain/api/LocalCatInteractor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/domain/impl/LocalCatInteractorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/domain/impl/LocalCatInteractorImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/ui/LocalCatsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/ui/LocalCatsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/ui/LocalCatsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/local_cats/ui/LocalCatsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/network/CatServices.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/network/CatServices.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/utils/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/api/CatConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/api/CatConverter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/api/WalkingCatsRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/api/WalkingCatsRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/impl/CatConverterImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/impl/CatConverterImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/impl/WalkingCatsRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/data/impl/WalkingCatsRepositoryImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/domain/api/WalkingCatsInteractor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/domain/api/WalkingCatsInteractor.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/domain/impl/WalkingCatsInteractorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/domain/impl/WalkingCatsInteractorImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/domain/models/CatDataModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mycatsapplication/walking_cats/ui/WalkingCatsViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_local_cats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_local_cats.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_walking_cats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_walking_cats.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_current_cat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_current_cat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/cat_navigation_items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/cat_navigation_items.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,12 +164,12 @@
         <option value="Kotlin Enum" />
         <option value="navigationResourceFile" />
         <option value="resourceFile" />
-        <option value="Kotlin Data Class" />
-        <option value="Kotlin Interface" />
         <option value="Kotlin JUnit5 Test Class" />
         <option value="Kotlin JUnit4 Test Class" />
         <option value="Kotlin Object" />
         <option value="layoutResourceFile" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -197,15 +229,16 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;add__localats__adapter&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;add__current__cat__fragment&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/AndroidStudioProjects/MyCatsApplication/app/src/test/java/com/example/mycatsapplication/walking_cats/ui&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/AndroidStudioProjects/MyCatsApplication/app/src/main/res/drawable&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/AndroidStudioProjects/MyCatsApplication/app/src/main/java/com/example/mycatsapplication/current_cat/data/dto_models&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.CommitDialog&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\AndroidStudioProjects\MyCatsApplication\app\src\main\java\com\example\mycatsapplication\current_cat\data\dto_models" />
       <recent name="C:\AndroidStudioProjects\MyCatsApplication\app\src\main\res\drawable" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -220,6 +253,7 @@
       <recent name="com.example.mycatsapplication.walking_cats.ui" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.example.mycatsapplication.utils.models" />
       <recent name="com.example.mycatsapplication.network.di" />
       <recent name="com.example.mycatsapplication.walking_cats.di" />
       <recent name="com.example.mycatsapplication.local_cats.data.impl" />
@@ -508,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764613526263</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="- add WalkingCatAdapter in LocalCatsFragment.kt">
+      <option name="closed" value="true" />
+      <created>1765649077430</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1765649077430</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -530,7 +572,8 @@
     <MESSAGE value="-add walkingCatAdapter" />
     <MESSAGE value="Merge pull request #4 from dencharski/add_shared_preferences&#10;&#10;-add SharedPreferences in LocalCatRepositoryImpl.kt" />
     <MESSAGE value="- add WalkingCatAdapter.kt" />
-    <option name="LAST_COMMIT_MESSAGE" value="- add WalkingCatAdapter.kt" />
+    <MESSAGE value="- add WalkingCatAdapter in LocalCatsFragment.kt" />
+    <option name="LAST_COMMIT_MESSAGE" value="- add WalkingCatAdapter in LocalCatsFragment.kt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -547,12 +590,12 @@
       <map>
         <entry key="com.example.mycatsapplication">
           <value>
-            <CheckInfo lastCheckTimestamp="1765645860196" />
+            <CheckInfo lastCheckTimestamp="1766858595969" />
           </value>
         </entry>
         <entry key="com.example.mycatsapplication.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1765645860198" />
+            <CheckInfo lastCheckTimestamp="1766858595964" />
           </value>
         </entry>
       </map>
