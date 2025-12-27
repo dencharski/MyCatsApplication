@@ -4,7 +4,7 @@ import android.util.Log
 import com.example.mycatsapplication.network.CatServices
 import com.example.mycatsapplication.walking_cats.data.api.CatConverter
 import com.example.mycatsapplication.walking_cats.data.api.WalkingCatsRepository
-import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+import com.example.mycatsapplication.utils.models.CatDataModel
 
 import java.io.IOException
 import javax.inject.Inject
@@ -18,9 +18,9 @@ class WalkingCatsRepositoryImpl @Inject constructor(
         try {
             val result = apiCatServices.getWalkingCats()
             Log.d(tag, "cats repository = " +
-                    "${result.body()}" +
+                    "${result?.body()}" +
                     "")
-            return catConverterImpl.convertCats(result.body()!!)
+            return catConverterImpl.convertCats(result?.body()!!)
 
         } catch (e: IOException) {
             Log.d(tag, "cat repository error ${e.message}")

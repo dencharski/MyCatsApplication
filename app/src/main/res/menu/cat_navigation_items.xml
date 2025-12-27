@@ -7,7 +7,5 @@
     <item
         android:id="@+id/walkingCatsFragment"
         android:title="@string/walking_cats" />
-    <item
-        android:id="@+id/currentCatFragment"
-        android:title="@string/current_cat" />
+
 </menu>

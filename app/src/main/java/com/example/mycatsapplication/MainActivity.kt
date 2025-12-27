@@ -2,6 +2,7 @@ package com.example.mycatsapplication
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
@@ -34,14 +35,17 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.localCatsFragment -> {
                     Log.d(tag, "localCatsFragment")
+                    bottomNavigationView.visibility = View.VISIBLE
                 }
 
                 R.id.walkingCatsFragment -> {
                     Log.d(tag, "walkingCatsFragment")
+                    bottomNavigationView.visibility = View.VISIBLE
                 }
 
                 R.id.currentCatFragment -> {
                     Log.d(tag, "currentCatFragment")
+                    bottomNavigationView.visibility = View.GONE
                 }
 
                 else -> {

@@ -5,7 +5,7 @@ import android.util.Log
 import com.example.mycatsapplication.local_cats.data.api.ConverterLocalCat
 import com.example.mycatsapplication.local_cats.data.api.LocalCatRepository
 import com.example.mycatsapplication.local_cats.data.models.LocalCatDataModel
-import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+import com.example.mycatsapplication.utils.models.CatDataModel
 import com.google.gson.Gson
 import javax.inject.Inject
 import androidx.core.content.edit

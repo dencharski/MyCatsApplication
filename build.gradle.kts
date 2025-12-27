@@ -2,7 +2,5 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
-   // kotlin("kapt") version "2.2.21"
-   // alias(libs.plugins.dagger.hilt) apply false
     alias(libs.plugins.hilt.android) apply false
 }

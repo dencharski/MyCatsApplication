@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mycatsapplication.R
 import com.example.mycatsapplication.databinding.ItemCatViewBinding
-import com.example.mycatsapplication.walking_cats.domain.models.CatDataModel
+import com.example.mycatsapplication.utils.models.CatDataModel
 
 class WalkingCatAdapter() : RecyclerView.Adapter<WalkingCatAdapter.ViewHolder>() {
 
