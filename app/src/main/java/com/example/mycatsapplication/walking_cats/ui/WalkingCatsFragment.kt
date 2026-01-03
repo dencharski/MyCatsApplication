@@ -44,6 +44,8 @@ class WalkingCatsFragment : Fragment(),
 
         prepareView()
         observeData()
+        walkingCatsViewModel.getWalkingCats()
+        setLoading()
         walkingCatsViewModel.getAllLocalCats()
     }
 
@@ -57,6 +59,7 @@ class WalkingCatsFragment : Fragment(),
                     )
                 }
                 walkingCatAdapter?.setListOfCats(it as ArrayList)
+                setGetData()
             }
         }
 
@@ -69,12 +72,20 @@ class WalkingCatsFragment : Fragment(),
     }
 
     private fun prepareView() {
-
         walkingCatAdapter = WalkingCatAdapter()
         walkingCatAdapter?.setDeleteButtonClickListener(this)
         walkingCatAdapter?.setItemClickListener(this)
         walkingCatAdapter?.setAddButtonClickListener(this)
         binding.catsRecyclerView.adapter = walkingCatAdapter
+    }
+    private fun setLoading() {
+        binding.catsRecyclerView.visibility = View.INVISIBLE
+        binding.progressCircular.visibility = View.VISIBLE
+    }
+
+    private fun setGetData() {
+        binding.catsRecyclerView.visibility = View.VISIBLE
+        binding.progressCircular.visibility = View.INVISIBLE
     }
 
     override fun onDestroyView() {

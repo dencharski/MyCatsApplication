@@ -48,6 +48,7 @@ class LocalCatsFragment : Fragment(),
         prepareView()
         observeData()
         localCatsViewModel.getAllLocalCats()
+        setLoading()
     }
 
     private fun observeData() {
@@ -58,7 +59,18 @@ class LocalCatsFragment : Fragment(),
         localCatsViewModel.listOfLocalCats.observe(viewLifecycleOwner) {
             it.forEach { item -> Log.d(tag, "local fr localCat=${item} ") }
             localCatAdapter?.setListOfCats(it as ArrayList)
+            setGetData()
         }
+    }
+
+    private fun setLoading() {
+        binding.catsRecyclerView.visibility = View.INVISIBLE
+        binding.progressCircular.visibility = View.VISIBLE
+    }
+
+    private fun setGetData() {
+        binding.catsRecyclerView.visibility = View.VISIBLE
+        binding.progressCircular.visibility = View.INVISIBLE
     }
 
     private fun prepareView() {
