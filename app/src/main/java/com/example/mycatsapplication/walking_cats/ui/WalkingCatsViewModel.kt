@@ -24,9 +24,6 @@ class WalkingCatsViewModel @Inject constructor(
     private val _catIdList = MutableLiveData<List<String>>()
     val catIdList: LiveData<List<String>> get() = _catIdList
 
-    init {
-        getWalkingCats()
-    }
 
     fun getWalkingCats() {
         viewModelScope.launch(Dispatchers.IO) {
