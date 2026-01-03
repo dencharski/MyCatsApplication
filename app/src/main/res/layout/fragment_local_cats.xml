@@ -13,5 +13,11 @@
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+    <ProgressBar
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/progress_circular"
+        android:layout_gravity="center"
+        />
 
 </FrameLayout>

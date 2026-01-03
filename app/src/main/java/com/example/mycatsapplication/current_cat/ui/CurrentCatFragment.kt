@@ -8,11 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
 import com.example.mycatsapplication.R
 import com.example.mycatsapplication.databinding.FragmentCurrentCatBinding
 import com.example.mycatsapplication.utils.Utils
 import com.example.mycatsapplication.utils.models.CatDataModel
-import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,7 +45,7 @@ class CurrentCatFragment : Fragment() {
             } else {
                 arguments?.getParcelable(Utils.getCatAppKey())
             }
-
+        setLoading()
         currentCatViewModel.getCurrentCat(catDataModel?.id.toString())
         currentCatViewModel.getAllLocalCats()
     }
@@ -54,19 +54,13 @@ class CurrentCatFragment : Fragment() {
         currentCatViewModel.currentCatDataModel.observe(viewLifecycleOwner) {
             binding.textViewTitle.text = it.url
             binding.textViewDate.text = it.id
-            /*
-                        Glide
-                            .with(this)
-                            .load(it.url)
-                            .placeholder(R.drawable.ic_android_black_24dp)
-                            .into(binding.imageViewPicture)
-            */
-            Picasso.get()
+            Glide
+                .with(this)
                 .load(it.url)
                 .placeholder(R.drawable.ic_android_black_24dp)
                 .into(binding.imageViewPicture)
 
-
+            setGetData()
         }
 
         currentCatViewModel.catIdList.observe(viewLifecycleOwner) {
@@ -83,6 +77,16 @@ class CurrentCatFragment : Fragment() {
     private fun prepareView() {
         binding.addInDbButton.setOnClickListener { onAddInDbClick(catDataModel) }
         binding.deleteInDbButton.setOnClickListener { onDeleteFromDbClick(catDataModel) }
+    }
+
+    private fun setLoading() {
+        binding.dataLinearLayout.visibility = View.INVISIBLE
+        binding.progressCircular.visibility = View.VISIBLE
+    }
+
+    private fun setGetData() {
+        binding.dataLinearLayout.visibility = View.VISIBLE
+        binding.progressCircular.visibility = View.INVISIBLE
     }
 
     fun onAddInDbClick(item: CatDataModel?) {
